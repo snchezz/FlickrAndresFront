@@ -1,0 +1,44 @@
+<app-nav></app-nav>
+
+<div>
+
+    <li style="font-size: 20px" *ngFor="let user of users">
+        {{user.name}}
+    </li>
+
+    <br>
+    
+    <span>Name:</span>
+    <input type="text" #name />
+    <br>
+    <span>Email:</span>
+    <input type="email" #email />
+    <br>
+    <span>Password:</span>
+    <input type="password" #password />
+    <br><br>
+    <button (click)="addUser(name.value, email.value, password.value)">New User</button>
+
+    <br><br>
+    <hr>
+
+    <span>Email:</span>
+    <input type="email" #email2 />
+    <br>
+    <span>Password:</span>
+    <input type="password" #password2 />
+    <br>
+    <button (click)="searchByNameAndPassword(email2.value, password2.value)">Login</button>
+
+    <br><br>
+    <hr>
+
+    <input type="text" #namesearch>
+    <button (click)="searchByName(namesearch.value)">Search</button>
+    <li *ngFor="let name of names">
+        {{name.name }}
+        {{name.email}}
+    </li>
+    <span>¿Aun no tienes cuenta? <a routerLink="/signin"> Create una ahora</a></span>
+
+</div>
